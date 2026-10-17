@@ -1,0 +1,39 @@
+{
+ "car.engine": {
+  "sounds": [
+   {
+    "name": "gta:engine"
+   }
+  ]
+ },
+ "car.siren": {
+  "sounds": [
+   {
+    "name": "gta:siren",
+    "attenuation_distance": 48
+   }
+  ]
+ },
+ "car.horn": {
+  "sounds": [
+   {
+    "name": "gta:horn",
+    "attenuation_distance": 40
+   }
+  ]
+ },
+ "cash.pickup": {
+  "sounds": [
+   {
+    "name": "gta:cash"
+   }
+  ]
+ },
+ "player.busted": {
+  "sounds": [
+   {
+    "name": "gta:busted"
+   }
+  ]
+ }
+}

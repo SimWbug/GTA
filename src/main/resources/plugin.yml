@@ -1,0 +1,19 @@
+name: GtaMC
+version: '${version}'
+main: fr.cleangang.gta.GtaPlugin
+api-version: '1.21'
+description: Mini-jeu GTA (1997) en vue de dessus — police contre voleurs
+authors: [Simon]
+
+commands:
+  gta:
+    description: Commandes du mini-jeu GTA
+    usage: /gta <join|leave|create|...>
+
+permissions:
+  gta.play:
+    description: Rejoindre une partie
+    default: true
+  gta.admin:
+    description: Créer / gérer les arènes
+    default: op

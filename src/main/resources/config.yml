@@ -1,0 +1,81 @@
+# ============================================================
+#  GtaMC — mini-jeu inspiré de Grand Theft Auto (1997)
+#  Vue de dessus, police contre voleurs, en voiture.
+# ============================================================
+
+game:
+  min-players: 2
+  max-players: 12
+  lobby-countdown: 20          # secondes avant le départ quand min-players est atteint
+  duration: 300                # durée d'une partie (secondes)
+  players-per-police: 3        # 1 policier pour 3 joueurs : 2-5 joueurs = 1 flic, 6-8 = 2, 9-11 = 3, 12 = 4
+  police-release-delay: 5      # secondes d'avance des voleurs au départ
+  end-delay: 6                 # secondes d'écran de fin (sans cinématique) avant le retour des joueurs
+  end-cinematic: true          # plan final sur l'équipe gagnante devant ses voitures
+  cinematic-duration: 9        # secondes
+
+prison:
+  protection: 3                # secondes d'invulnérabilité des voleurs libérés
+
+vote:
+  enabled: true                # après la partie : retour au lobby + vote de la prochaine ville
+  duration: 15                 # secondes
+
+events:
+  enabled: true                # convoi de fonds, coupure de courant, double butin, alerte générale
+  interval-min: 60             # secondes entre deux événements (aléatoire entre min et max)
+  interval-max: 100
+  duration: 20                 # durée des événements (le convoi, lui, dure le temps de traverser)
+  convoy-value: 1000           # magot du fourgon (réparti en 4 paquets)
+  convoy-speed: 0.28           # blocs / tick
+  alert-speed-boost: 1.15      # vitesse de la police pendant l'alerte générale
+
+hub:
+  enabled: true                # objet GTA dans la barre d'action du hub
+  worlds: [lobby]              # mondes où l'objet est donné (nom du monde du hub)
+  slot: 5                      # 0 = 1re case ; 5 = 6e case (Loup-Garou en 4e, Find The Poulet en 5e)
+
+bots:
+  speed: 0.9                   # vitesse des bots de test par rapport aux joueurs (1.0 = identique)
+
+money:
+  target-base: 2000            # butin à atteindre = base + par-voleur x nombre de voleurs
+  target-per-thief: 1000
+  packet-min: 100
+  packet-max: 500
+  initial-packets: 5
+  max-packets: 8               # paquets présents en même temps au maximum
+  spawn-interval: 5            # secondes entre deux apparitions
+  pickup-radius: 1.6
+
+car:
+  scale: 1.4                   # taille des voitures (1.0 = 1 bloc de large)
+  police-max-speed: 0.60       # en blocs / tick
+  thief-max-speed: 0.56
+  reverse-max-speed: 0.22
+  acceleration: 0.022
+  brake: 0.05
+  friction: 0.965
+  turn-speed: 6.5              # degrés / tick à pleine adhérence
+  nitro-multiplier: 1.45
+  nitro-duration: 40           # ticks
+  nitro-cooldown: 200          # ticks
+  kill-tolerance: 0.05         # marge en plus de la carrosserie pour l'éperonnage
+
+camera:
+  height: 20                   # hauteur de la caméra au-dessus de la route
+  speed-zoom: 18               # recul de caméra supplémentaire à pleine vitesse (comme dans GTA 1)
+  overview-height: 92          # caméra « vue d'ensemble » des voleurs arrêtés
+
+# Modèles 3D : nécessite le resource pack GtaMC (fusionné dans ton pack serveur
+# ou envoyé ci-dessous). Si false, les voitures sont des blocs de béton colorés.
+use-custom-models: true
+
+resource-pack:
+  send-on-join: false          # envoyer le pack quand le joueur rejoint une partie
+  url: ""
+  sha1: ""
+  prompt: "Pack de textures GTA (voitures et billets)"
+
+generation:
+  columns-per-tick: 160        # colonnes de 1x1 posées par tick lors de la création de la ville
